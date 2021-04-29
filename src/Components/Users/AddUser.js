@@ -8,7 +8,7 @@ const AddUser = (props) => {
 
     const [enteredUsername, setEnteredUsername] = useState('');
     const [enteredAge, setEnteredAge] = useState('');
-    const [error, setError] = useState();
+    const [error, setError] = useState(null);
 
     const addUserHandler = (event) =>{
         event.preventDefault();
@@ -18,7 +18,7 @@ const AddUser = (props) => {
             return;
         };
         if (+enteredAge < 1) {
-            setError({title:'Invalid input!', message:'Enter a >1 value'});
+            setError({title:'Invalid input!', message:'Enter a > 1 value'});
             return;
         };
 
@@ -26,7 +26,6 @@ const AddUser = (props) => {
 
         setEnteredAge('');
         setEnteredUsername('');
-        // console.log(enteredAge + enteredUsername);
     }
 
     const usernameChangeHandler = (event) => {
